@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <VBox id="billingBox" class="sapUiMediumMargin">
+
+        <Input
+            id="amountInput"
+            placeholder="Enter Claim Amount"
+            value="{/claimAmount}"
+            liveChange="onAmountChange"/>
+
+        <Text
+            id="returnText"
+            text="Return Amount: {/returnAmount}"
+            class="sapUiSmallMarginTop"/>
+
+        <Button
+            id="submitBtn"
+            text="Submit"
+            press="onSubmit"
+            type="Accept"
+            class="sapUiSmallMarginTop"/>
+
+    </VBox>
+
+</core:FragmentDefinition>

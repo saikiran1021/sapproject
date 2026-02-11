@@ -1,0 +1,25 @@
+<mvc:View
+    controllerName="com.project.project1.controller.Claim"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="claimPage"
+        title="Claim Details">
+
+        <content>
+
+            <core:Fragment
+                fragmentName="com.project.project1.fragment.ClaimTable"
+                type="XML" />
+
+            <core:Fragment
+                fragmentName="com.project.project1.fragment.BillingSection"
+                type="XML" />
+
+        </content>
+
+    </Page>
+
+</mvc:View>

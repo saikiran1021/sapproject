@@ -1,0 +1,93 @@
+{
+  "_version": "1.81.0",
+
+  "sap.app": {
+    "id": "com.project.project1.project1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}"
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": true,
+
+    "rootView": {
+      "viewName": "com.project.project1.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+
+    "dependencies": {
+  "minUI5Version": "1.144.1",
+  "libs": {
+    "sap.m": {
+      "lazy": false
+    },
+    "sap.ui.core": {
+      "lazy": false
+    },
+    "sap.ui.unified": {
+      "lazy": false
+    }
+  }
+},
+
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.project.project1.project1.i18n.i18n"
+        }
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.project.project1.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+
+      "routes": [
+        {
+          "pattern": "",
+          "name": "main",
+          "target": "main"
+        },
+        {
+          "pattern": "claim",
+          "name": "claim",
+          "target": "claim"
+        }
+      ],
+
+      "targets": {
+        "main": {
+          "viewName": "Main",
+          "viewId": "Main"
+        },
+        "claim": {
+          "viewName": "Claim",
+          "viewId": "Claim"
+        }
+      }
+    }
+  }
+}
