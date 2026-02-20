@@ -14,14 +14,13 @@ sap.ui.define([
 
             UIComponent.prototype.init.apply(this, arguments);
 
-            // Initialize Models
-            this.setModel(models.createUserModel(), "user");
-            this.setModel(models.createClaimModel(), "claim");
-            this.setModel(models.createClaimsModel(), "claims");
+            if (models) {
+                this.setModel(models.createUserModel(), "user");
+                this.setModel(models.createClaimModel(), "claim");
+                this.setModel(models.createClaimsModel(), "claims");
+            }
 
-            // Start routing
             this.getRouter().initialize();
         }
-
     });
 });
