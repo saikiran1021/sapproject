@@ -4,14 +4,35 @@ sap.ui.define([
     "use strict";
 
     return {
-        createModel: function () {
+
+        createUserModel: function () {
             return new JSONModel({
-                name: "",
-                claimType: "",
-                claimAmount: "",
-                returnAmount: "",
-                claimLimit: 0
+                username: "",
+                password: "",
+                currentUser: null,
+                users: [
+                    {
+                        username: "admin",
+                        password: "1234",
+                        name: "John Doe",
+                        role: "Employee"
+                    }
+                ]
+            });
+        },
+
+        createClaimModel: function () {
+            return new JSONModel({
+                selectedType: "",
+                returnAmount: 0
+            });
+        },
+
+        createClaimsModel: function () {
+            return new JSONModel({
+                claims: []
             });
         }
+
     };
 });

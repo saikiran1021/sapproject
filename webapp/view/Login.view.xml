@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="com.project.project1.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page title="Expense Claim Login">
+
+        <content>
+            <VBox class="sapUiSmallMargin" width="300px" alignItems="Center">
+
+                <Title text="Login" level="H2" />
+
+                <Input
+                    id="usernameInput"
+                    placeholder="Username"
+                    value="{user>/username}"
+                    class="sapUiSmallMarginTop" />
+
+                <Input
+                    id="passwordInput"
+                    placeholder="Password"
+                    type="Password"
+                    value="{user>/password}"
+                    class="sapUiSmallMarginTop" />
+
+                <Button
+                    text="Login"
+                    type="Emphasized"
+                    press="onLogin"
+                    class="sapUiMediumMarginTop"
+                    width="100%" />
+
+            </VBox>
+        </content>
+
+    </Page>
+
+</mvc:View>

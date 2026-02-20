@@ -1,8 +1,7 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "sap/ui/model/json/JSONModel",
-    "com/project/project1/model/model"
-], function (UIComponent, JSONModel, model) {
+    "com/project/project1/model/models"
+], function (UIComponent, models) {
     "use strict";
 
     return UIComponent.extend("com.project.project1.Component", {
@@ -12,14 +11,17 @@ sap.ui.define([
         },
 
         init: function () {
+
             UIComponent.prototype.init.apply(this, arguments);
 
-            // Set JSON Model
-            var oModel = model.createModel();
-            this.setModel(oModel);
+            // Initialize Models
+            this.setModel(models.createUserModel(), "user");
+            this.setModel(models.createClaimModel(), "claim");
+            this.setModel(models.createClaimsModel(), "claims");
 
-            // Initialize Router
+            // Start routing
             this.getRouter().initialize();
         }
+
     });
 });

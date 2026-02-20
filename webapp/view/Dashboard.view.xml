@@ -1,0 +1,75 @@
+<mvc:View
+    controllerName="com.project.project1.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page title="Dashboard">
+
+        <headerContent>
+            <Button
+                text="Logout"
+                type="Reject"
+                press="onLogout" />
+        </headerContent>
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <!-- Welcome Section -->
+                <ObjectHeader
+                    title="Welcome"
+                    intro="{user>/currentUser/name}" />
+
+                <Button
+                    text="Create New Claim"
+                    type="Emphasized"
+                    press="onCreate"
+                    class="sapUiMediumMarginTop"
+                    width="250px" />
+
+                <Title
+                    text="Your Claims"
+                    level="H3"
+                    class="sapUiMediumMarginTop" />
+
+                <!-- Claims List -->
+                <List
+                    items="{claims>/claims}"
+                    class="sapUiSmallMarginTop"
+                    noDataText="No Claims Submitted Yet">
+
+                    <items>
+                        <ObjectListItem
+                            title="{claims>claimType}"
+                            number="{claims>returnAmount}"
+                            numberUnit="INR"
+                            intro="Claim Amount: {claims>claimAmount}">
+
+                            <attributes>
+                                <ObjectAttribute text="Date: {claims>createdAt}" />
+                            </attributes>
+
+                            <firstStatus>
+                                <ObjectStatus
+                                    text="{claims>status}"
+                                    state="{
+                                        = ${claims>status} === 'Approved' ? 'Success' :
+                                          ${claims>status} === 'Rejected' ? 'Error' :
+                                          'Warning'
+                                    }" />
+                            </firstStatus>
+
+                        </ObjectListItem>
+                    </items>
+
+                </List>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

@@ -2,14 +2,12 @@
   "_version": "1.81.0",
 
   "sap.app": {
-    "id": "com.project.project1.project1",
+    "id": "com.project.project1",
     "type": "application",
-    "i18n": "i18n/i18n.properties",
+    "title": "Expense Claim App",
     "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+      "version": "1.0.0"
+    }
   },
 
   "sap.ui": {
@@ -22,36 +20,23 @@
   },
 
   "sap.ui5": {
-    "flexEnabled": true,
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
 
     "rootView": {
       "viewName": "com.project.project1.view.App",
       "type": "XML",
-      "async": true,
-      "id": "app"
+      "id": "app",
+      "async": true
     },
 
     "dependencies": {
-  "minUI5Version": "1.144.1",
-  "libs": {
-    "sap.m": {
-      "lazy": false
-    },
-    "sap.ui.core": {
-      "lazy": false
-    },
-    "sap.ui.unified": {
-      "lazy": false
-    }
-  }
-},
-
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "com.project.project1.project1.i18n.i18n"
-        }
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
       }
     },
 
@@ -64,29 +49,17 @@
         "controlAggregation": "pages",
         "async": true
       },
-
       "routes": [
-        {
-          "pattern": "",
-          "name": "main",
-          "target": "main"
-        },
-        {
-          "pattern": "claim",
-          "name": "claim",
-          "target": "claim"
-        }
+        { "name": "Login", "pattern": "", "target": "Login" },
+        { "name": "Dashboard", "pattern": "dashboard", "target": "Dashboard" },
+        { "name": "ClaimType", "pattern": "claimType", "target": "ClaimType" },
+        { "name": "ClaimDetails", "pattern": "claimDetails", "target": "ClaimDetails" }
       ],
-
       "targets": {
-        "main": {
-          "viewName": "Main",
-          "viewId": "Main"
-        },
-        "claim": {
-          "viewName": "Claim",
-          "viewId": "Claim"
-        }
+        "Login": { "viewName": "Login" },
+        "Dashboard": { "viewName": "Dashboard" },
+        "ClaimType": { "viewName": "ClaimType" },
+        "ClaimDetails": { "viewName": "ClaimDetails" }
       }
     }
   }

@@ -1,0 +1,46 @@
+<mvc:View
+    controllerName="com.project.project1.controller.ClaimDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:upload="sap.m.upload"
+
+    displayBlock="true">
+
+    <Page title="Claim Details"
+          showNavButton="true"
+          navButtonPress="onNavBack">
+
+        <content>
+            <VBox class="sapUiMediumMargin">
+
+                <ObjectHeader
+                    title="Submit Expense Claim"
+                    intro="{user>/currentUser/name}" />
+
+                <Text text="Claim Type: {claim>/selectedType}"
+                      class="sapUiSmallMarginTop"/>
+
+                <upload:UploadSet
+                    id="uploadSet"
+                        instantUpload="false"/>
+                <Label text="Claim Amount"
+                       class="sapUiSmallMarginTop"/>
+
+                <Input id="claimAmountInput"
+                       type="Number"
+                       liveChange="onAmountChange"/>
+
+                <Text text="Return Amount (83%): {claim>/returnAmount}"
+                      class="sapUiSmallMarginTop"/>
+
+                <Button text="Submit Claim"
+                        type="Emphasized"
+                        press="onSubmit"
+                        class="sapUiMediumMarginTop"/>
+
+            </VBox>
+        </content>
+
+    </Page>
+
+</mvc:View>
