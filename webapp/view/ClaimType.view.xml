@@ -1,0 +1,44 @@
+<mvc:View
+    controllerName="com.project.project1.controller.ClaimType"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page title="Select Claim Type"
+          showNavButton="true"
+          navButtonPress="onNavBack">
+
+        <content>
+            <VBox class="sapUiMediumMargin">
+
+                <ObjectHeader
+                    title="Claim Type Selection"
+                    intro="{user>/currentUser/name}" />
+
+                <Label text="Select Claim Type"
+                       class="sapUiMediumMarginTop"/>
+
+                <Select id="claimTypeSelect"
+                        selectedKey="{claim>/selectedType}">
+
+                    <items>
+                        <core:Item key="Mobile Claim"
+                                   text="Mobile Claim" />
+                        <core:Item key="Broadband Claim"
+                                   text="Broadband Claim" />
+                    </items>
+
+                </Select>
+
+                <Button text="Continue"
+                        type="Emphasized"
+                        press="onContinue"
+                        class="sapUiMediumMarginTop"/>
+
+            </VBox>
+        </content>
+
+    </Page>
+
+</mvc:View>

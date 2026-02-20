@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="com.project.project1.controller.ClaimDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:upload="sap.m.upload"
+
+    displayBlock="true">
+
+    <Page title="Claim Details"
+          showNavButton="true"
+          navButtonPress="onNavBack">
+
+        <content>
+            <VBox class="sapUiMediumMargin">
+
+                <ObjectHeader
+                    title="Submit Expense Claim"
+                    intro="{user>/currentUser/name}" />
+
+                <Text text="Claim Type: {claim>/selectedType}"
+                      class="sapUiSmallMarginTop"/>
+
+                <Label text="Upload Bill/Receipt (Required)"
+                       class="sapUiSmallMarginTop" required="true"/>
+
+                <Text text="Please upload a clear image of your bill or receipt. Only one image per claim. Supported formats: JPG, PNG, GIF, BMP. Minimum size: 200x200 pixels."
+                      class="sapUiTinyMarginTop"
+                      design="Information"/>
+
+                <upload:UploadSet
+                    id="uploadSet"
+                    instantUpload="true"
+                    maxFileCount="1"
+                    maxFileNameLength="100"
+                    maxFileSize="5242880"
+                    class="sapUiSmallMarginTop"/>
+
+                <Label text="Claim Amount (₹)"
+                       class="sapUiSmallMarginTop"/>
+
+                <Input id="claimAmountInput"
+                       type="Number"
+                       liveChange="onAmountChange"
+                       placeholder="Enter amount"/>
+
+                <Text text="Return Amount (83%): {claim>/returnAmount}"
+                      class="sapUiSmallMarginTop"/>
+
+                <Button text="Submit Claim"
+                        type="Emphasized"
+                        press="onSubmit"
+                        class="sapUiMediumMarginTop"/>
+
+            </VBox>
+        </content>
+
+    </Page>
+
+</mvc:View>

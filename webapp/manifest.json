@@ -1,0 +1,66 @@
+{
+  "_version": "1.81.0",
+
+  "sap.app": {
+    "id": "com.project.project1",
+    "type": "application",
+    "title": "Expense Claim App",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "rootView": {
+      "viewName": "com.project.project1.view.App",
+      "type": "XML",
+      "id": "app",
+      "async": true
+    },
+
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.project.project1.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        { "name": "Login", "pattern": "", "target": "Login" },
+        { "name": "Dashboard", "pattern": "dashboard", "target": "Dashboard" },
+        { "name": "ClaimType", "pattern": "claimType", "target": "ClaimType" },
+        { "name": "ClaimDetails", "pattern": "claimDetails", "target": "ClaimDetails" }
+      ],
+      "targets": {
+        "Login": { "viewName": "Login" },
+        "Dashboard": { "viewName": "Dashboard" },
+        "ClaimType": { "viewName": "ClaimType" },
+        "ClaimDetails": { "viewName": "ClaimDetails" }
+      }
+    }
+  }
+}

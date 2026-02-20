@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Table id="claimTable">
+        <columns>
+            <Column>
+                <Text text="Name"/>
+            </Column>
+            <Column>
+                <Text text="Claim Type"/>
+            </Column>
+            <Column>
+                <Text text="Upload"/>
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{/name}"/>
+                    <Text text="{/claimType}"/>
+                    <u:FileUploader id="fileUploader"/>
+
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+
+</core:FragmentDefinition>
